@@ -482,6 +482,33 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
   border: 0;
 }
 
+.travel-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  padding: 10px 20px;
+  background: rgba(168, 129, 60, 0.1);
+  border: 1px solid rgba(168, 129, 60, 0.25);
+  border-radius: 999px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.travel-note__icon { font-size: 17px; line-height: 1; }
+.travel-note__text {
+  font-size: 15px;
+  color: var(--text-soft);
+  letter-spacing: 0.02em;
+}
+
+.travel-route {
+  max-width: 340px;
+  margin: 0 auto 24px;
+}
+.travel-route svg { width: 100%; height: auto; display: block; }
+
 /* ==========================================================================
    RSVP FORM
    ========================================================================== */
