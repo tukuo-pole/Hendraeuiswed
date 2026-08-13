@@ -13,7 +13,7 @@ const CONFIG = {
   bride: {
     fullName: "Euis Herlina, S.M",
     shortName: "Euis",
-    fatherName: "Caswan Ocim", // fill in — left blank in the source brief
+    fatherName: "Caswan Ocim",
     motherName: "Rasminah",
     photoUrl: "assets/bride.jpg"
   },
@@ -86,7 +86,7 @@ const CONFIG = {
 
   // Paste the Web App URL you get after deploying apps-script/Code.gs
   // (see SETUP-GUIDE.md). Leave empty to keep RSVP/Wishes disabled.
-  appsScriptUrl: "https://script.google.com/macros/s/AKfycbzDAgXzx01CUAbel9wAGUlhLBkahGJIrwIvVQC9VQSQffone2UXHILzzV6MemdFCA8XTw/exec",
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbyM8cZfgnwtGhkdTgx6RGLgdNvddQWA2ERpEKOMSau0WF0c_mJx3qRM5TL11hi1A6gj-A/exec",
 
   // How often to refresh the wishes list, in milliseconds.
   wishesPollMs: 15000
@@ -255,7 +255,7 @@ function populateContent() {
       .map(
         (src) => `
         <div class="moments-carousel__item">
-          <img src="${src}" alt="Momen Hendra & Uis" loading="lazy">
+          <img src="${src}" alt="Momen Hendra & Euis" loading="lazy">
         </div>`
       )
       .join("");
