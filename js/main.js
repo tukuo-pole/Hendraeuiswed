@@ -43,7 +43,7 @@ const CONFIG = {
       label: "Resepsi",
       startHour: 11,
       startMinute: 0,
-      endHour: 14,
+      endHour: 13,
       endMinute: 0
     }
   },
