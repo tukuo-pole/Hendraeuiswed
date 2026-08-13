@@ -88,7 +88,7 @@ const CONFIG = {
 
   // Paste the Web App URL you get after deploying apps-script/Code.gs
   // (see SETUP-GUIDE.md). Leave empty to keep RSVP/Wishes disabled.
-  appsScriptUrl: "",
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbwsgbhMM7uqKUoL-i8zzmWEpxwJEF4o9mOaaMuvO-N6xX898Xyjj3V6krIoXULeoWb82w/exec",
 
   // How often to refresh the wishes list, in milliseconds.
   wishesPollMs: 15000
