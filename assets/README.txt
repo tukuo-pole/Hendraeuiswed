@@ -8,10 +8,13 @@ folder and already wired up in the site:
                         "Buka Undangan" (trimmed to 60s, faded in/out,
                         compressed to ~940KB so it's light on mobile data)
 
-Nothing left to add here unless you want more — e.g. a pre-wedding video.
-If you'd like one featured, upload it and I can wire up a short looping
-clip in the cover or closing section — just tell me which moment you want
-it in.
+Nothing left to add here unless you want more — e.g. more photos for the
+new "Our Moments" gallery (it's currently just showing the couple photo),
+or a pre-wedding video. To add gallery photos: drop more files into this
+folder (e.g. assets/moment1.jpg, assets/moment2.jpg) and list their paths
+in CONFIG.gallery in js/main.js. If you'd like a video featured, upload it
+and I can wire up a short looping clip in the cover or closing section —
+just tell me which moment you want it in.
 
 Tips for web performance:
   - Photos: crop to a square, resize to ~600x600px, export as .jpg at

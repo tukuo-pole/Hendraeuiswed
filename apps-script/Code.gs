@@ -13,7 +13,7 @@
  */
 
 const SHEET_NAME = "RSVP";
-const HEADERS = ["Timestamp", "Name", "Attendance", "GuestCount", "Message"];
+const HEADERS = ["Timestamp", "Name", "Phone", "Attendance", "GuestCount", "Message"];
 
 function getSheet_() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -51,9 +51,10 @@ function doGet(e) {
       const items = rows.slice(1).map((r) => ({
         timestamp: r[0],
         name: r[1],
-        attendance: r[2],
-        guestCount: r[3],
-        message: r[4]
+        phone: r[2],
+        attendance: r[3],
+        guestCount: r[4],
+        message: r[5]
       }));
       return jsonResponse_({ ok: true, items });
     }
@@ -85,6 +86,7 @@ function doPost(e) {
     sheet.appendRow([
       new Date(),
       name,
+      (payload.phone || "").toString().trim(),
       payload.attendance || "",
       payload.guestCount || "",
       (payload.message || "").toString().trim()

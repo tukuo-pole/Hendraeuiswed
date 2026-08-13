@@ -186,6 +186,7 @@ a { color: inherit; }
 .cover--photo .cover__ornament { opacity: 0.75; }
 
 .cover__content { position: relative; z-index: 1; max-width: 420px; }
+.cover--photo .cover__content * { text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45); }
 
 .cover__guestLabel {
   margin: 18px 0 4px;
@@ -597,8 +598,103 @@ input:focus, textarea:focus { border-color: var(--gold); }
 }
 
 /* ==========================================================================
+   STICKY NAV
+   ========================================================================== */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(239, 234, 217, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(30, 47, 34, 0.1);
+}
+.site-nav__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 4vw, 28px);
+  padding: 14px 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.site-nav__inner::-webkit-scrollbar { display: none; }
+.site-nav__link {
+  flex: none;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-soft);
+  white-space: nowrap;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.site-nav__link:hover,
+.site-nav__link:focus-visible {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ==========================================================================
+   QUOTE SECTION
+   ========================================================================== */
+.quote-section { text-align: center; padding-top: clamp(48px, 8vh, 72px); }
+.quote-ornament {
+  color: var(--gold);
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+.quote-section__text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(17px, 3.6vw, 21px);
+  line-height: 1.6;
+  color: var(--dark);
+  max-width: 44ch;
+  margin: 0 auto 14px;
+}
+.quote-section__source {
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  color: var(--sage);
+  margin: 0;
+}
+
+/* ==========================================================================
+   MOMENTS GALLERY
+   ========================================================================== */
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 32px;
+}
+.moments-grid__item {
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  box-shadow: 0 6px 18px rgba(30, 47, 34, 0.1);
+}
+.moments-grid__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.moments-empty {
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 14px;
+  grid-column: 1 / -1;
+}
+
+/* ==========================================================================
    RESPONSIVE TWEAKS
    ========================================================================== */
 @media (min-width: 640px) {
   .gift-grid { grid-template-columns: 1fr 1fr; }
+  .moments-grid { grid-template-columns: repeat(3, 1fr); }
 }

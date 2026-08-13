@@ -45,13 +45,33 @@ const CONFIG = {
   gift: {
     bankName: "Bank BCA",
     accountNumber: "123456789",
-    accountHolder: "a.n. Ananta Hendra",
+    accountHolder: "a.n. Herlinanta",
     deliveryAddress: "Jl. Cisanggiri II No.3"
   },
 
+  // Shown in the "Quote" section right after the cover. Leave text as ""
+  // to hide the section entirely.
+  quote: {
+    text:
+      "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu " +
+      "pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa " +
+      "tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.",
+    source: "Q.S. Ar-Rum: 21"
+  },
+
+  // Photos for the "Our Moments" gallery. Add as many paths as you like —
+  // just drop the files into assets/ first. Leave empty to hide the section.
+  gallery: [
+    "assets/moment1.jpg",
+    "assets/moment2.jpg",
+    "assets/moment3.jpg",
+    "assets/moment4.jpg",
+    "assets/moment5.jpg"
+  ],
+
   // Paste the Web App URL you get after deploying apps-script/Code.gs
   // (see SETUP-GUIDE.md). Leave empty to keep RSVP/Wishes disabled.
-  appsScriptUrl: "https://script.google.com/macros/s/AKfycbzoff8FXw3Gp2qnwt9Y59siw_BVD27E7mc4lCIpwZ6GY1atWB_uu34BvcWFOs-8AmA5WA/exec",
+  appsScriptUrl: "",
 
   // How often to refresh the wishes list, in milliseconds.
   wishesPollMs: 15000
@@ -128,8 +148,8 @@ function populateContent() {
   if (CONFIG.coverPhotoUrl) {
     const cover = document.getElementById("cover");
     cover.style.backgroundImage =
-      "linear-gradient(160deg, rgba(30,47,34,0.6), rgba(22,36,27,0.88)), " +
-      "radial-gradient(ellipse at top, rgba(168,129,60,0.18), transparent 60%), " +
+      "linear-gradient(180deg, rgba(15,22,17,0.78) 0%, rgba(15,22,17,0.62) 35%, rgba(15,22,17,0.72) 65%, rgba(15,22,17,0.92) 100%), " +
+      "radial-gradient(ellipse at top, rgba(168,129,60,0.15), transparent 60%), " +
       `url('${CONFIG.coverPhotoUrl}')`;
     cover.style.backgroundSize = "cover";
     cover.style.backgroundPosition = "center 20%";
@@ -183,6 +203,34 @@ function populateContent() {
   document.getElementById("giftAccountNumber").textContent = CONFIG.gift.accountNumber;
   document.getElementById("giftAccountName").textContent = CONFIG.gift.accountHolder;
   document.getElementById("giftAddress").textContent = CONFIG.gift.deliveryAddress;
+
+  // Quote
+  const quoteSection = document.getElementById("quote");
+  if (CONFIG.quote && CONFIG.quote.text) {
+    document.getElementById("quoteText").textContent = `"${CONFIG.quote.text}"`;
+    document.getElementById("quoteSource").textContent = CONFIG.quote.source
+      ? `— ${CONFIG.quote.source}`
+      : "";
+  } else {
+    quoteSection.hidden = true;
+  }
+
+  // Our Moments gallery
+  const momentsSection = document.getElementById("moments");
+  const momentsGrid = document.getElementById("momentsGrid");
+  const gallery = CONFIG.gallery || [];
+  if (gallery.length === 0) {
+    momentsSection.hidden = true;
+  } else {
+    momentsGrid.innerHTML = gallery
+      .map(
+        (src) => `
+        <div class="moments-grid__item">
+          <img src="${src}" alt="Momen Hendra & Uis" loading="lazy">
+        </div>`
+      )
+      .join("");
+  }
 }
 
 const DAY_NAMES = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
@@ -314,6 +362,7 @@ function initRsvpAndWishes() {
 
     const data = {
       name: document.getElementById("rsvpName").value.trim(),
+      phone: document.getElementById("rsvpPhone").value.trim(),
       attendance: form.querySelector('input[name="attendance"]:checked')?.value || "",
       guestCount: document.getElementById("rsvpGuestCount").value,
       message: document.getElementById("rsvpMessage").value.trim()
