@@ -22,15 +22,30 @@ const CONFIG = {
   // Leave "" to keep the plain dark cover background instead.
   coverPhotoUrl: "assets/couple.jpg",
 
-  // Wedding date & time. Hour/minute are in WIB (UTC+7).
+  // Wedding date, and two events (Akad Nikah & Resepsi). Hours/minutes are
+  // in WIB (UTC+7). Both events default to the same day/venue — change
+  // venue per event below if they're held in different places.
   wedding: {
     year: 2026,
     month: 11,     // 1–12
     day: 28,
-    hour: 8,        // 24h, WIB
-    minute: 0,
-    durationHours: 3,     // used for the Google Calendar end time
     timezone: "Asia/Jakarta"
+  },
+  events: {
+    akad: {
+      label: "Akad Nikah",
+      startHour: 8,
+      startMinute: 0,
+      endHour: 10,
+      endMinute: 0
+    },
+    resepsi: {
+      label: "Resepsi",
+      startHour: 11,
+      startMinute: 0,
+      endHour: 14,
+      endMinute: 0
+    }
   },
 
   venue: {
@@ -71,7 +86,7 @@ const CONFIG = {
 
   // Paste the Web App URL you get after deploying apps-script/Code.gs
   // (see SETUP-GUIDE.md). Leave empty to keep RSVP/Wishes disabled.
-  appsScriptUrl: "",
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbzDAgXzx01CUAbel9wAGUlhLBkahGJIrwIvVQC9VQSQffone2UXHILzzV6MemdFCA8XTw/exec",
 
   // How often to refresh the wishes list, in milliseconds.
   wishesPollMs: 15000
@@ -82,12 +97,14 @@ const CONFIG = {
    ========================================================================== */
 function pad2(n) { return String(n).padStart(2, "0"); }
 
-// Wedding start/end as real UTC instants, computed from the WIB fields above.
-function getWeddingUtcRange() {
-  const { year, month, day, hour, minute, durationHours } = CONFIG.wedding;
+// An event's start/end as real UTC instants, computed from the WIB fields
+// above. eventKey is "akad" or "resepsi".
+function getEventUtcRange(eventKey) {
+  const { year, month, day } = CONFIG.wedding;
+  const ev = CONFIG.events[eventKey];
   // WIB is UTC+7 year-round (no DST), so subtract 7 hours to get UTC.
-  const startUtc = new Date(Date.UTC(year, month - 1, day, hour - 7, minute, 0));
-  const endUtc = new Date(startUtc.getTime() + durationHours * 60 * 60 * 1000);
+  const startUtc = new Date(Date.UTC(year, month - 1, day, ev.startHour - 7, ev.startMinute, 0));
+  const endUtc = new Date(Date.UTC(year, month - 1, day, ev.endHour - 7, ev.endMinute, 0));
   return { startUtc, endUtc };
 }
 
@@ -104,10 +121,11 @@ function formatGCalDate(d) {
   );
 }
 
-function buildCalendarUrl() {
-  const { startUtc, endUtc } = getWeddingUtcRange();
-  const title = `Pernikahan ${CONFIG.groom.shortName} & ${CONFIG.bride.shortName}`;
-  const details = `Resepsi pernikahan ${CONFIG.groom.fullName} & ${CONFIG.bride.fullName} di ${CONFIG.venue.name}.`;
+function buildCalendarUrl(eventKey) {
+  const { startUtc, endUtc } = getEventUtcRange(eventKey);
+  const ev = CONFIG.events[eventKey];
+  const title = `${ev.label} ${CONFIG.groom.shortName} & ${CONFIG.bride.shortName}`;
+  const details = `${ev.label} ${CONFIG.groom.fullName} & ${CONFIG.bride.fullName} di ${CONFIG.venue.name}.`;
   const location = `${CONFIG.venue.name}, ${CONFIG.venue.address}`;
 
   const params = new URLSearchParams({
@@ -182,21 +200,32 @@ function populateContent() {
     document.getElementById("bridePhoto").style.backgroundImage = `url('${CONFIG.bride.photoUrl}')`;
   }
 
-  // Event details
-  document.getElementById("eventDateFull").textContent = formatDisplayDate(true);
-  document.getElementById("eventTimeFull").textContent =
-    `Pukul ${pad2(CONFIG.wedding.hour)}:${pad2(CONFIG.wedding.minute)} WIB`;
-  document.getElementById("eventVenueName").textContent = CONFIG.venue.name;
-  document.getElementById("eventVenueAddress").textContent = CONFIG.venue.address;
+  // Event details — Akad Nikah & Resepsi
+  const eventDateStr = formatDisplayDate(true);
+  const akad = CONFIG.events.akad;
+  const resepsi = CONFIG.events.resepsi;
+
+  document.getElementById("akadDateFull").textContent = eventDateStr;
+  document.getElementById("akadTimeFull").textContent =
+    `${pad2(akad.startHour)}:${pad2(akad.startMinute)} – ${pad2(akad.endHour)}:${pad2(akad.endMinute)} WIB`;
+  document.getElementById("akadVenueName").textContent = CONFIG.venue.name;
+  document.getElementById("akadVenueAddress").textContent = CONFIG.venue.address;
+
+  document.getElementById("resepsiDateFull").textContent = eventDateStr;
+  document.getElementById("resepsiTimeFull").textContent =
+    `${pad2(resepsi.startHour)}:${pad2(resepsi.startMinute)} – ${pad2(resepsi.endHour)}:${pad2(resepsi.endMinute)} WIB`;
+  document.getElementById("resepsiVenueName").textContent = CONFIG.venue.name;
+  document.getElementById("resepsiVenueAddress").textContent = CONFIG.venue.address;
+
+  document.querySelectorAll(".event-card__calendarBtn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      window.open(buildCalendarUrl(btn.dataset.event), "_blank", "noopener");
+    });
+  });
 
   // Map
   document.getElementById("mapEmbed").src = buildMapsEmbedUrl();
   document.getElementById("mapDirectionsBtn").href = buildMapsSearchUrl();
-
-  // Calendar button
-  document.getElementById("addToCalendar").addEventListener("click", () => {
-    window.open(buildCalendarUrl(), "_blank", "noopener");
-  });
 
   // Gift
   document.getElementById("giftBankName").textContent = CONFIG.gift.bankName;
@@ -215,17 +244,17 @@ function populateContent() {
     quoteSection.hidden = true;
   }
 
-  // Our Moments gallery
+  // Our Moments carousel
   const momentsSection = document.getElementById("moments");
-  const momentsGrid = document.getElementById("momentsGrid");
+  const momentsTrack = document.getElementById("momentsTrack");
   const gallery = CONFIG.gallery || [];
   if (gallery.length === 0) {
     momentsSection.hidden = true;
   } else {
-    momentsGrid.innerHTML = gallery
+    momentsTrack.innerHTML = gallery
       .map(
         (src) => `
-        <div class="moments-grid__item">
+        <div class="moments-carousel__item">
           <img src="${src}" alt="Momen Hendra & Uis" loading="lazy">
         </div>`
       )
@@ -250,7 +279,7 @@ function formatDisplayDate(withDayName) {
    COUNTDOWN
    ========================================================================== */
 function startCountdown() {
-  const { startUtc } = getWeddingUtcRange();
+  const { startUtc } = getEventUtcRange("akad");
   const target = startUtc.getTime();
 
   function tick() {
@@ -306,6 +335,7 @@ function initCoverOpen() {
   openBtn.addEventListener("click", () => {
     main.hidden = false;
     document.body.style.overflow = "auto";
+    document.body.classList.add("invitation-open");
     cover.style.opacity = "0";
     cover.style.transition = "opacity 0.6s ease";
     setTimeout(() => {
@@ -337,6 +367,58 @@ function initMusicToggle() {
       music.pause();
       setMusicState(false);
     }
+  });
+}
+
+/* ==========================================================================
+   MOMENTS CAROUSEL
+   ========================================================================== */
+function initMomentsCarousel() {
+  const track = document.getElementById("momentsTrack");
+  const dotsWrap = document.getElementById("momentsDots");
+  const prevBtn = document.querySelector(".moments-carousel__arrow--prev");
+  const nextBtn = document.querySelector(".moments-carousel__arrow--next");
+  const items = track.querySelectorAll(".moments-carousel__item");
+
+  if (items.length === 0) return;
+
+  dotsWrap.innerHTML = Array.from(items)
+    .map((_, i) => `<button type="button" class="moments-carousel__dot${i === 0 ? " is-active" : ""}" aria-label="Foto ${i + 1}"></button>`)
+    .join("");
+  const dots = dotsWrap.querySelectorAll(".moments-carousel__dot");
+
+  function scrollToIndex(i) {
+    const clamped = Math.max(0, Math.min(items.length - 1, i));
+    items[clamped].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }
+
+  function currentIndex() {
+    const trackCenter = track.scrollLeft + track.clientWidth / 2;
+    let closest = 0;
+    let closestDist = Infinity;
+    items.forEach((item, i) => {
+      const itemCenter = item.offsetLeft + item.clientWidth / 2;
+      const dist = Math.abs(itemCenter - trackCenter);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closest = i;
+      }
+    });
+    return closest;
+  }
+
+  function setActiveDot(i) {
+    dots.forEach((d, di) => d.classList.toggle("is-active", di === i));
+  }
+
+  prevBtn.addEventListener("click", () => scrollToIndex(currentIndex() - 1));
+  nextBtn.addEventListener("click", () => scrollToIndex(currentIndex() + 1));
+  dots.forEach((dot, i) => dot.addEventListener("click", () => scrollToIndex(i)));
+
+  let scrollTimeout;
+  track.addEventListener("scroll", () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => setActiveDot(currentIndex()), 100);
   });
 }
 
@@ -465,6 +547,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initCoverOpen();
   initMusicToggle();
+  initMomentsCarousel();
   initRsvpAndWishes();
   initCopyAccount();
 });

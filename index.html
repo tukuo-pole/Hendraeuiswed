@@ -17,6 +17,37 @@
 </head>
 <body>
 
+<!-- ============ SIDE ORNAMENTS (wide viewports only) ============ -->
+<div class="side-ornament side-ornament--left" aria-hidden="true">
+  <svg viewBox="0 0 120 900" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#A8813C" stroke-width="1.3" opacity="0.55">
+      <path d="M10 0 C60 60 20 140 55 210 S10 340 50 420 S15 560 55 650 S15 780 50 900" />
+      <circle cx="55" cy="210" r="3" />
+      <circle cx="50" cy="420" r="3" />
+      <circle cx="55" cy="650" r="3" />
+      <path d="M20 100c14-6 26-2 33 10" />
+      <path d="M15 300c14-6 26-2 33 10" />
+      <path d="M25 500c14-6 26-2 33 10" />
+      <path d="M18 700c14-6 26-2 33 10" />
+    </g>
+  </svg>
+</div>
+<div class="side-ornament side-ornament--right" aria-hidden="true">
+  <svg viewBox="0 0 120 900" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#A8813C" stroke-width="1.3" opacity="0.55">
+      <path d="M110 0 C60 60 100 140 65 210 S110 340 70 420 S105 560 65 650 S105 780 70 900" />
+      <circle cx="65" cy="210" r="3" />
+      <circle cx="70" cy="420" r="3" />
+      <circle cx="65" cy="650" r="3" />
+      <path d="M100 100c-14-6-26-2-33 10" />
+      <path d="M105 300c-14-6-26-2-33 10" />
+      <path d="M95 500c-14-6-26-2-33 10" />
+      <path d="M102 700c-14-6-26-2-33 10" />
+    </g>
+  </svg>
+</div>
+
+
 <!-- ============ FLOATING MUSIC BUTTON ============ -->
 <button id="musicToggle" class="music-toggle" aria-label="Putar musik" aria-pressed="false">
   <svg viewBox="0 0 24 24" class="music-icon music-icon--play"><path d="M8 5v14l11-7z"/></svg>
@@ -34,7 +65,7 @@
   <div class="cover__ornament cover__ornament--bottom" aria-hidden="true"></div>
 
   <div class="cover__content">
-    <p class="eyebrow">Undangan Pernikahan</p>
+    <p class="eyebrow eyebrow--light">Undangan Pernikahan</p>
     <p class="cover__guestLabel">Kepada Bapak/Ibu/Saudara/i</p>
     <p id="guestName" class="cover__guestName">Tamu Undangan</p>
 
@@ -125,31 +156,54 @@
         <span class="countdown__label">Detik</span>
       </div>
     </div>
-
-    <button id="addToCalendar" class="btn btn--gold">
-      Simpan ke Google Calendar
-    </button>
   </section>
 
   <!-- ============ EVENT DETAILS ============ -->
   <section id="event" class="section reveal">
     <p class="eyebrow eyebrow--center">Acara</p>
-    <h2 class="section__title">Resepsi Pernikahan</h2>
+    <h2 class="section__title">Rangkaian Acara</h2>
 
-    <div class="event-card">
-      <div class="event-card__row">
-        <span class="event-card__icon" aria-hidden="true">&#128197;</span>
-        <div>
-          <p id="eventDateFull" class="event-card__main">Sabtu, 28 November 2026</p>
-          <p id="eventTimeFull" class="event-card__sub">Pukul 08:00 WIB</p>
+    <div class="event-cards">
+      <div class="event-card">
+        <p class="event-card__title">Akad Nikah</p>
+        <div class="event-card__row">
+          <span class="event-card__icon" aria-hidden="true">&#128197;</span>
+          <div>
+            <p id="akadDateFull" class="event-card__main">Sabtu, 28 November 2026</p>
+            <p id="akadTimeFull" class="event-card__sub">08:00 – 10:00 WIB</p>
+          </div>
         </div>
+        <div class="event-card__row">
+          <span class="event-card__icon" aria-hidden="true">&#128205;</span>
+          <div>
+            <p id="akadVenueName" class="event-card__main">Arunika Eatery</p>
+            <p id="akadVenueAddress" class="event-card__sub">Cigugur, Palutungan, Kuningan, Jawa Barat</p>
+          </div>
+        </div>
+        <button type="button" class="btn btn--outline event-card__calendarBtn" data-event="akad">
+          Simpan ke Kalender
+        </button>
       </div>
-      <div class="event-card__row">
-        <span class="event-card__icon" aria-hidden="true">&#128205;</span>
-        <div>
-          <p id="eventVenueName" class="event-card__main">Arunika Eatery</p>
-          <p id="eventVenueAddress" class="event-card__sub">Cigugur, Palutungan, Kuningan, Jawa Barat</p>
+
+      <div class="event-card">
+        <p class="event-card__title">Resepsi</p>
+        <div class="event-card__row">
+          <span class="event-card__icon" aria-hidden="true">&#128197;</span>
+          <div>
+            <p id="resepsiDateFull" class="event-card__main">Sabtu, 28 November 2026</p>
+            <p id="resepsiTimeFull" class="event-card__sub">11:00 – 14:00 WIB</p>
+          </div>
         </div>
+        <div class="event-card__row">
+          <span class="event-card__icon" aria-hidden="true">&#128205;</span>
+          <div>
+            <p id="resepsiVenueName" class="event-card__main">Arunika Eatery</p>
+            <p id="resepsiVenueAddress" class="event-card__sub">Cigugur, Palutungan, Kuningan, Jawa Barat</p>
+          </div>
+        </div>
+        <button type="button" class="btn btn--outline event-card__calendarBtn" data-event="resepsi">
+          Simpan ke Kalender
+        </button>
       </div>
     </div>
   </section>
@@ -175,7 +229,12 @@
     <p class="eyebrow eyebrow--center">Momen</p>
     <h2 class="section__title">Momen Kami</h2>
 
-    <div id="momentsGrid" class="moments-grid"></div>
+    <div class="moments-carousel">
+      <button type="button" class="moments-carousel__arrow moments-carousel__arrow--prev" aria-label="Foto sebelumnya">&#10094;</button>
+      <div id="momentsTrack" class="moments-carousel__track"></div>
+      <button type="button" class="moments-carousel__arrow moments-carousel__arrow--next" aria-label="Foto berikutnya">&#10095;</button>
+    </div>
+    <div id="momentsDots" class="moments-carousel__dots"></div>
   </section>
 
   <!-- ============ RSVP ============ -->
