@@ -71,7 +71,7 @@ const CONFIG = {
       "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu " +
       "pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa " +
       "tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.",
-    source: "Q.S. Ar-Rum: 21 -"
+    source: "Q.S. Ar-Rum: 21 ---"
   },
 
   // Photos for the "Our Moments" gallery. Add as many paths as you like —
