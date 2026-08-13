@@ -163,27 +163,25 @@ a { color: inherit; }
 
 .cover__ornament {
   position: absolute;
-  width: 220px;
-  height: 220px;
-  opacity: 0.5;
+  width: 240px;
+  height: 240px;
+  opacity: 0.55;
   background-repeat: no-repeat;
   background-size: contain;
   pointer-events: none;
 }
 .cover__ornament--top {
-  top: -30px;
-  left: -40px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23C7A467' stroke-width='1.4'%3E%3Cpath d='M10 190C10 120 40 60 110 40'/%3E%3Cpath d='M30 150c20-10 35-8 45 5'/%3E%3Cpath d='M55 100c18-4 30 2 38 16'/%3E%3Cpath d='M75 60c14-2 24 4 30 16'/%3E%3Ccircle cx='112' cy='38' r='3'/%3E%3C/g%3E%3C/svg%3E");
-  transform: rotate(0deg);
+  top: -20px;
+  left: -30px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20220%20220%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23C7A467%27%20stroke-width%3D%271.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M-10%20150%20L30%2090%20L55%20118%20L90%2055%20L140%20150%20Z%27/%3E%3Cpath%20d%3D%27M100%20150%20L118%20118%20L136%20150%20Z%27/%3E%3Cpath%20d%3D%27M124%20150%20L142%20108%20L160%20150%20Z%27/%3E%3Cpath%20d%3D%27M90%2055%20L82%2070%20M90%2055%20L98%2070%27/%3E%3Ccircle%20cx%3D%27172%27%20cy%3D%2740%27%20r%3D%2716%27/%3E%3Cpath%20d%3D%27M20%20200c30-6%2055%202%2070%2018%27/%3E%3Cpath%20d%3D%27M60%20210c14-4%2024%200%2030%208%27/%3E%3C/g%3E%3C/svg%3E");
 }
 .cover__ornament--bottom {
-  bottom: -30px;
-  right: -40px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23C7A467' stroke-width='1.4'%3E%3Cpath d='M10 190C10 120 40 60 110 40'/%3E%3Cpath d='M30 150c20-10 35-8 45 5'/%3E%3Cpath d='M55 100c18-4 30 2 38 16'/%3E%3Cpath d='M75 60c14-2 24 4 30 16'/%3E%3Ccircle cx='112' cy='38' r='3'/%3E%3C/g%3E%3C/svg%3E");
-  transform: rotate(180deg);
+  bottom: -20px;
+  right: -30px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20220%20220%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23C7A467%27%20stroke-width%3D%271.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M230%20150%20L190%2090%20L165%20118%20L130%2055%20L80%20150%20Z%27/%3E%3Cpath%20d%3D%27M120%20150%20L102%20118%20L84%20150%20Z%27/%3E%3Cpath%20d%3D%27M96%20150%20L78%20108%20L60%20150%20Z%27/%3E%3Cpath%20d%3D%27M130%2055%20L138%2070%20M130%2055%20L122%2070%27/%3E%3Ccircle%20cx%3D%2748%27%20cy%3D%2740%27%20r%3D%2716%27/%3E%3Cpath%20d%3D%27M200%20200c-30-6-55%202-70%2018%27/%3E%3Cpath%20d%3D%27M160%20210c-14-4-24%200-30%208%27/%3E%3C/g%3E%3C/svg%3E");
 }
 
-.cover--photo .cover__ornament { opacity: 0.75; }
+.cover--photo .cover__ornament { opacity: 0.8; }
 
 .cover__content { position: relative; z-index: 1; max-width: 420px; }
 .cover--photo .cover__content * { text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45); }
@@ -226,14 +224,13 @@ a { color: inherit; }
 }
 
 .cover__openBtn {
-  color: var(--text-light);
-  border-color: var(--gold-light);
+  color: #fff;
+  border-color: var(--gold);
   border-width: 1.5px;
-  background: rgba(15, 22, 17, 0.45);
-  backdrop-filter: blur(4px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  background: var(--gold);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
 }
-.cover__openBtn:hover { background: rgba(15, 22, 17, 0.65); }
+.cover__openBtn:hover { background: var(--gold-light); border-color: var(--gold-light); }
 
 /* ==========================================================================
    BUTTONS
@@ -380,15 +377,37 @@ a { color: inherit; }
   margin-top: 32px;
 }
 .event-card {
+  position: relative;
   background: var(--bg-alt);
   border-radius: 18px;
-  padding: 26px 24px;
+  padding: 30px 24px 26px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 18px;
   text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(168, 129, 60, 0.18);
 }
+.event-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 46px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%2046%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23A8813C%27%20stroke-width%3D%271.2%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M0%2044%20L40%2010%20L70%2044%20Z%27/%3E%3Cpath%20d%3D%27M55%2044%20L95%206%20L135%2044%20Z%27/%3E%3Cpath%20d%3D%27M180%2044%20L215%2014%20L250%2044%20Z%27/%3E%3Cpath%20d%3D%27M230%2044%20L265%208%20L300%2044%20Z%27/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  opacity: 0.1;
+  pointer-events: none;
+}
+.event-card__ornament {
+  width: 46px;
+  opacity: 0.85;
+}
+.event-card__ornament svg { width: 100%; height: auto; display: block; }
 .event-card__title {
   font-family: var(--font-display);
   font-size: 21px;
@@ -416,6 +435,7 @@ a { color: inherit; }
   color: var(--text-soft);
 }
 .event-card__calendarBtn {
+  position: relative;
   border-color: var(--gold);
   color: var(--gold);
   padding: 10px 22px;
@@ -702,6 +722,11 @@ input:focus, textarea:focus { border-color: var(--gold); }
   margin: 0 auto;
 }
 .quote-flourish svg { width: 100%; height: auto; display: block; }
+.quote-treeline {
+  width: min(420px, 90%);
+  margin: 28px auto 0;
+}
+.quote-treeline svg { width: 100%; height: auto; display: block; }
 
 /* ==========================================================================
    MOMENTS CAROUSEL
