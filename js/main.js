@@ -12,7 +12,7 @@ const CONFIG = {
   },
   bride: {
     fullName: "Euis Herlina, S.M",
-    shortName: "Uis",
+    shortName: "Euis",
     fatherName: "Caswan Ocim", // fill in — left blank in the source brief
     motherName: "Rasminah",
     photoUrl: "assets/bride.jpg"
