@@ -54,7 +54,9 @@ const CONFIG = {
     // If you have exact coordinates, fill these in for a pinpoint-accurate
     // map + directions link. Leave as null to search by name/address instead.
     lat: null,
-    lng: null
+    lng: null,
+    // Shown as a small badge under the map. Leave "" to hide it.
+    travelNote: "± 4 jam perjalanan dari Jakarta"
   },
 
   gift: {
@@ -86,7 +88,7 @@ const CONFIG = {
 
   // Paste the Web App URL you get after deploying apps-script/Code.gs
   // (see SETUP-GUIDE.md). Leave empty to keep RSVP/Wishes disabled.
-  appsScriptUrl: "https://script.google.com/macros/s/AKfycbyUo8b13OvoW8QC1cbyCED6tFQPvZm_pZLwNySd8X7X_j_WbCrS8Ua504zL-D2RDRpotQ/exec",
+  appsScriptUrl: "",
 
   // How often to refresh the wishes list, in milliseconds.
   wishesPollMs: 15000
@@ -226,6 +228,14 @@ function populateContent() {
   // Map
   document.getElementById("mapEmbed").src = buildMapsEmbedUrl();
   document.getElementById("mapDirectionsBtn").href = buildMapsSearchUrl();
+
+  // Travel note badge
+  const travelNoteEl = document.getElementById("travelNote");
+  if (CONFIG.venue.travelNote) {
+    document.getElementById("travelNoteText").textContent = CONFIG.venue.travelNote;
+  } else {
+    travelNoteEl.hidden = true;
+  }
 
   // Gift
   document.getElementById("giftBankName").textContent = CONFIG.gift.bankName;
