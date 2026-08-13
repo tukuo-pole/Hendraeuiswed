@@ -20,6 +20,7 @@
 
   --font-display: "Cormorant Garamond", serif;
   --font-body: "Jost", sans-serif;
+  --font-script: "Mrs Saint Delafield", cursive;
 
   --section-pad: clamp(56px, 10vh, 96px) 24px;
   --max-width: 720px;
@@ -173,12 +174,13 @@ a { color: inherit; }
 .cover__ornament--top {
   top: -20px;
   left: -30px;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20220%20220%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23C7A467%27%20stroke-width%3D%271.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M-10%20150%20L30%2090%20L55%20118%20L90%2055%20L140%20150%20Z%27/%3E%3Cpath%20d%3D%27M100%20150%20L118%20118%20L136%20150%20Z%27/%3E%3Cpath%20d%3D%27M124%20150%20L142%20108%20L160%20150%20Z%27/%3E%3Cpath%20d%3D%27M90%2055%20L82%2070%20M90%2055%20L98%2070%27/%3E%3Ccircle%20cx%3D%27172%27%20cy%3D%2740%27%20r%3D%2716%27/%3E%3Cpath%20d%3D%27M20%20200c30-6%2055%202%2070%2018%27/%3E%3Cpath%20d%3D%27M60%20210c14-4%2024%200%2030%208%27/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20220%20220%22%3E%3Cpath%20d%3D%22M18.0%2012.0%20L68.5%2084.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221.1%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M26.4%2024.0%20L38.7%2025.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M26.4%2024.0%20L23.2%2035.9%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M34.8%2036.0%20L47.1%2037.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M34.8%2036.0%20L31.6%2047.9%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M43.2%2048.0%20L55.5%2049.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M43.2%2048.0%20L40.0%2059.9%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M51.6%2060.1%20L63.9%2061.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M51.6%2060.1%20L48.5%2072.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M60.1%2072.1%20L72.3%2073.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M60.1%2072.1%20L56.9%2084.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M34.0%206.0%20L65.9%2066.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221.1%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M40.4%2018.0%20L49.7%2020.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M40.4%2018.0%20L36.8%2026.8%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M46.8%2030.0%20L56.1%2032.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M46.8%2030.0%20L43.2%2038.8%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M53.2%2042.0%20L62.5%2044.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M53.2%2042.0%20L49.6%2050.9%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M59.5%2054.0%20L68.9%2056.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M59.5%2054.0%20L56.0%2062.9%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M52.0%2064.0%20Q58.9%2072.8%2070.1%2072.5%20Q63.2%2063.7%2052.0%2064.0%20Z%22%20fill%3D%22%237C8B6F%22%20opacity%3D%220.8%22%20/%3E%3Cpath%20d%3D%22M58.0%2084.0%20Q51.5%2092.0%2054.9%20101.7%20Q61.4%2093.7%2058.0%2084.0%20Z%22%20fill%3D%22%237C8B6F%22%20opacity%3D%220.8%22%20/%3E%3Cg%20fill%3D%22%23F8F5EA%22%20stroke%3D%22%23B08D57%22%20stroke-width%3D%220.6%22%3E%0A%3Cellipse%20cx%3D%2274.0%22%20cy%3D%2263.0%22%20rx%3D%224.2%22%20ry%3D%227.0%22%20transform%3D%22rotate%280.0%2074.0%2063.0%29%22%20/%3E%0A%3Cellipse%20cx%3D%2282.6%22%20cy%3D%2269.2%22%20rx%3D%224.2%22%20ry%3D%227.0%22%20transform%3D%22rotate%2872.0%2082.6%2069.2%29%22%20/%3E%0A%3Cellipse%20cx%3D%2279.3%22%20cy%3D%2279.3%22%20rx%3D%224.2%22%20ry%3D%227.0%22%20transform%3D%22rotate%28144.0%2079.3%2079.3%29%22%20/%3E%0A%3Cellipse%20cx%3D%2268.7%22%20cy%3D%2279.3%22%20rx%3D%224.2%22%20ry%3D%227.0%22%20transform%3D%22rotate%28216.0%2068.7%2079.3%29%22%20/%3E%0A%3Cellipse%20cx%3D%2265.4%22%20cy%3D%2269.2%22%20rx%3D%224.2%22%20ry%3D%227.0%22%20transform%3D%22rotate%28288.0%2065.4%2069.2%29%22%20/%3E%0A%3Ccircle%20cx%3D%2274%22%20cy%3D%2272%22%20r%3D%223.6%22%20fill%3D%22%23D9B86A%22%20stroke%3D%22none%22%20/%3E%0A%3C/g%3E%3Cg%20fill%3D%22%23F8F5EA%22%20stroke%3D%22%23B08D57%22%20stroke-width%3D%220.6%22%3E%0A%3Cellipse%20cx%3D%2246.0%22%20cy%3D%2286.0%22%20rx%3D%222.7%22%20ry%3D%224.5%22%20transform%3D%22rotate%280.0%2046.0%2086.0%29%22%20/%3E%0A%3Cellipse%20cx%3D%2251.7%22%20cy%3D%2290.1%22%20rx%3D%222.7%22%20ry%3D%224.5%22%20transform%3D%22rotate%2872.0%2051.7%2090.1%29%22%20/%3E%0A%3Cellipse%20cx%3D%2249.5%22%20cy%3D%2296.9%22%20rx%3D%222.7%22%20ry%3D%224.5%22%20transform%3D%22rotate%28144.0%2049.5%2096.9%29%22%20/%3E%0A%3Cellipse%20cx%3D%2242.5%22%20cy%3D%2296.9%22%20rx%3D%222.7%22%20ry%3D%224.5%22%20transform%3D%22rotate%28216.0%2042.5%2096.9%29%22%20/%3E%0A%3Cellipse%20cx%3D%2240.3%22%20cy%3D%2290.1%22%20rx%3D%222.7%22%20ry%3D%224.5%22%20transform%3D%22rotate%28288.0%2040.3%2090.1%29%22%20/%3E%0A%3Ccircle%20cx%3D%2246%22%20cy%3D%2292%22%20r%3D%222.4%22%20fill%3D%22%23D9B86A%22%20stroke%3D%22none%22%20/%3E%0A%3C/g%3E%3Cg%20fill%3D%22%23F8F5EA%22%20stroke%3D%22%23B08D57%22%20stroke-width%3D%220.6%22%3E%0A%3Cellipse%20cx%3D%2290.0%22%20cy%3D%2245.0%22%20rx%3D%222.1%22%20ry%3D%223.5%22%20transform%3D%22rotate%280.0%2090.0%2045.0%29%22%20/%3E%0A%3Cellipse%20cx%3D%2294.8%22%20cy%3D%2248.5%22%20rx%3D%222.1%22%20ry%3D%223.5%22%20transform%3D%22rotate%2872.0%2094.8%2048.5%29%22%20/%3E%0A%3Cellipse%20cx%3D%2292.9%22%20cy%3D%2254.0%22%20rx%3D%222.1%22%20ry%3D%223.5%22%20transform%3D%22rotate%28144.0%2092.9%2054.0%29%22%20/%3E%0A%3Cellipse%20cx%3D%2287.1%22%20cy%3D%2254.0%22%20rx%3D%222.1%22%20ry%3D%223.5%22%20transform%3D%22rotate%28216.0%2087.1%2054.0%29%22%20/%3E%0A%3Cellipse%20cx%3D%2285.2%22%20cy%3D%2248.5%22%20rx%3D%222.1%22%20ry%3D%223.5%22%20transform%3D%22rotate%28288.0%2085.2%2048.5%29%22%20/%3E%0A%3Ccircle%20cx%3D%2290%22%20cy%3D%2250%22%20r%3D%222.0%22%20fill%3D%22%23D9B86A%22%20stroke%3D%22none%22%20/%3E%0A%3C/g%3E%3C/svg%3E");
 }
 .cover__ornament--bottom {
   bottom: -20px;
   right: -30px;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20220%20220%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23C7A467%27%20stroke-width%3D%271.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M230%20150%20L190%2090%20L165%20118%20L130%2055%20L80%20150%20Z%27/%3E%3Cpath%20d%3D%27M120%20150%20L102%20118%20L84%20150%20Z%27/%3E%3Cpath%20d%3D%27M96%20150%20L78%20108%20L60%20150%20Z%27/%3E%3Cpath%20d%3D%27M130%2055%20L138%2070%20M130%2055%20L122%2070%27/%3E%3Ccircle%20cx%3D%2748%27%20cy%3D%2740%27%20r%3D%2716%27/%3E%3Cpath%20d%3D%27M200%20200c-30-6-55%202-70%2018%27/%3E%3Cpath%20d%3D%27M160%20210c-14-4-24%200-30%208%27/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20220%20220%22%3E%3Cpath%20d%3D%22M18.0%2012.0%20L68.5%2084.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221.1%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M26.4%2024.0%20L38.7%2025.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M26.4%2024.0%20L23.2%2035.9%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M34.8%2036.0%20L47.1%2037.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M34.8%2036.0%20L31.6%2047.9%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M43.2%2048.0%20L55.5%2049.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M43.2%2048.0%20L40.0%2059.9%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M51.6%2060.1%20L63.9%2061.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M51.6%2060.1%20L48.5%2072.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M60.1%2072.1%20L72.3%2073.1%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M60.1%2072.1%20L56.9%2084.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M34.0%206.0%20L65.9%2066.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221.1%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M40.4%2018.0%20L49.7%2020.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M40.4%2018.0%20L36.8%2026.8%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M46.8%2030.0%20L56.1%2032.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M46.8%2030.0%20L43.2%2038.8%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M53.2%2042.0%20L62.5%2044.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M53.2%2042.0%20L49.6%2050.9%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M59.5%2054.0%20L68.9%2056.0%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%0A%3Cpath%20d%3D%22M59.5%2054.0%20L56.0%2062.9%22%20fill%3D%22none%22%20stroke%3D%22%237C8B6F%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M52.0%2064.0%20Q58.9%2072.8%2070.1%2072.5%20Q63.2%2063.7%2052.0%2064.0%20Z%22%20fill%3D%22%237C8B6F%22%20opacity%3D%220.8%22%20/%3E%3Cpath%20d%3D%22M58.0%2084.0%20Q51.5%2092.0%2054.9%20101.7%20Q61.4%2093.7%2058.0%2084.0%20Z%22%20fill%3D%22%237C8B6F%22%20opacity%3D%220.8%22%20/%3E%3Cg%20fill%3D%22%23F8F5EA%22%20stroke%3D%22%23B08D57%22%20stroke-width%3D%220.6%22%3E%0A%3Cellipse%20cx%3D%2274.0%22%20cy%3D%2263.0%22%20rx%3D%224.2%22%20ry%3D%227.0%22%20transform%3D%22rotate%280.0%2074.0%2063.0%29%22%20/%3E%0A%3Cellipse%20cx%3D%2282.6%22%20cy%3D%2269.2%22%20rx%3D%224.2%22%20ry%3D%227.0%22%20transform%3D%22rotate%2872.0%2082.6%2069.2%29%22%20/%3E%0A%3Cellipse%20cx%3D%2279.3%22%20cy%3D%2279.3%22%20rx%3D%224.2%22%20ry%3D%227.0%22%20transform%3D%22rotate%28144.0%2079.3%2079.3%29%22%20/%3E%0A%3Cellipse%20cx%3D%2268.7%22%20cy%3D%2279.3%22%20rx%3D%224.2%22%20ry%3D%227.0%22%20transform%3D%22rotate%28216.0%2068.7%2079.3%29%22%20/%3E%0A%3Cellipse%20cx%3D%2265.4%22%20cy%3D%2269.2%22%20rx%3D%224.2%22%20ry%3D%227.0%22%20transform%3D%22rotate%28288.0%2065.4%2069.2%29%22%20/%3E%0A%3Ccircle%20cx%3D%2274%22%20cy%3D%2272%22%20r%3D%223.6%22%20fill%3D%22%23D9B86A%22%20stroke%3D%22none%22%20/%3E%0A%3C/g%3E%3Cg%20fill%3D%22%23F8F5EA%22%20stroke%3D%22%23B08D57%22%20stroke-width%3D%220.6%22%3E%0A%3Cellipse%20cx%3D%2246.0%22%20cy%3D%2286.0%22%20rx%3D%222.7%22%20ry%3D%224.5%22%20transform%3D%22rotate%280.0%2046.0%2086.0%29%22%20/%3E%0A%3Cellipse%20cx%3D%2251.7%22%20cy%3D%2290.1%22%20rx%3D%222.7%22%20ry%3D%224.5%22%20transform%3D%22rotate%2872.0%2051.7%2090.1%29%22%20/%3E%0A%3Cellipse%20cx%3D%2249.5%22%20cy%3D%2296.9%22%20rx%3D%222.7%22%20ry%3D%224.5%22%20transform%3D%22rotate%28144.0%2049.5%2096.9%29%22%20/%3E%0A%3Cellipse%20cx%3D%2242.5%22%20cy%3D%2296.9%22%20rx%3D%222.7%22%20ry%3D%224.5%22%20transform%3D%22rotate%28216.0%2042.5%2096.9%29%22%20/%3E%0A%3Cellipse%20cx%3D%2240.3%22%20cy%3D%2290.1%22%20rx%3D%222.7%22%20ry%3D%224.5%22%20transform%3D%22rotate%28288.0%2040.3%2090.1%29%22%20/%3E%0A%3Ccircle%20cx%3D%2246%22%20cy%3D%2292%22%20r%3D%222.4%22%20fill%3D%22%23D9B86A%22%20stroke%3D%22none%22%20/%3E%0A%3C/g%3E%3Cg%20fill%3D%22%23F8F5EA%22%20stroke%3D%22%23B08D57%22%20stroke-width%3D%220.6%22%3E%0A%3Cellipse%20cx%3D%2290.0%22%20cy%3D%2245.0%22%20rx%3D%222.1%22%20ry%3D%223.5%22%20transform%3D%22rotate%280.0%2090.0%2045.0%29%22%20/%3E%0A%3Cellipse%20cx%3D%2294.8%22%20cy%3D%2248.5%22%20rx%3D%222.1%22%20ry%3D%223.5%22%20transform%3D%22rotate%2872.0%2094.8%2048.5%29%22%20/%3E%0A%3Cellipse%20cx%3D%2292.9%22%20cy%3D%2254.0%22%20rx%3D%222.1%22%20ry%3D%223.5%22%20transform%3D%22rotate%28144.0%2092.9%2054.0%29%22%20/%3E%0A%3Cellipse%20cx%3D%2287.1%22%20cy%3D%2254.0%22%20rx%3D%222.1%22%20ry%3D%223.5%22%20transform%3D%22rotate%28216.0%2087.1%2054.0%29%22%20/%3E%0A%3Cellipse%20cx%3D%2285.2%22%20cy%3D%2248.5%22%20rx%3D%222.1%22%20ry%3D%223.5%22%20transform%3D%22rotate%28288.0%2085.2%2048.5%29%22%20/%3E%0A%3Ccircle%20cx%3D%2290%22%20cy%3D%2250%22%20r%3D%222.0%22%20fill%3D%22%23D9B86A%22%20stroke%3D%22none%22%20/%3E%0A%3C/g%3E%3C/svg%3E");
+  transform: scaleX(-1) scaleY(-1);
 }
 
 .cover--photo .cover__ornament { opacity: 0.8; }
@@ -201,18 +203,18 @@ a { color: inherit; }
 
 .cover__names { margin: 8px 0 20px; }
 .cover__name {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(44px, 13vw, 68px);
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(56px, 17vw, 92px);
   margin: 0;
   letter-spacing: 0.01em;
+  line-height: 1.1;
 }
 .cover__name .amp {
   display: inline-block;
-  font-style: italic;
   color: var(--gold-light);
-  margin: 0 14px;
-  font-size: 0.7em;
+  margin: 0 6px;
+  font-size: 0.75em;
 }
 
 .cover__date {
@@ -281,9 +283,8 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
   margin-top: 40px;
 }
 .couple__divider {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 26px;
+  font-family: var(--font-script);
+  font-size: 40px;
   color: var(--gold);
 }
 .couple__card { text-align: center; }
@@ -386,22 +387,28 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
   align-items: center;
   gap: 18px;
   text-align: center;
-  overflow: hidden;
   border: 1px solid rgba(168, 129, 60, 0.18);
 }
-.event-card::before {
+.event-card::before,
+.event-card::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 46px;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20300%2046%27%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23A8813C%27%20stroke-width%3D%271.2%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M0%2044%20L40%2010%20L70%2044%20Z%27/%3E%3Cpath%20d%3D%27M55%2044%20L95%206%20L135%2044%20Z%27/%3E%3Cpath%20d%3D%27M180%2044%20L215%2014%20L250%2044%20Z%27/%3E%3Cpath%20d%3D%27M230%2044%20L265%208%20L300%2044%20Z%27/%3E%3C/g%3E%3C/svg%3E");
+  width: 62px;
+  height: 62px;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2060%2060%27%3E%3Cpath%20d%3D%27M10.0%2050.0%20Q11.9%2043.0%2020.0%2036.1%20Q17.6%2043.9%2010.0%2050.0%20Z%27%20fill%3D%27%237C8B6F%27%20opacity%3D%270.8%27%20/%3E%3Cpath%20d%3D%27M14.0%2038.0%20Q17.7%2032.4%2023.8%2029.7%20Q19.8%2035.4%2014.0%2038.0%20Z%27%20fill%3D%27%237C8B6F%27%20opacity%3D%270.8%27%20/%3E%3Cg%20fill%3D%27%23F8F5EA%27%20stroke%3D%27%23B08D57%27%20stroke-width%3D%270.6%27%3E%0A%3Cellipse%20cx%3D%2728.0%27%20cy%3D%2721.0%27%20rx%3D%273.0%27%20ry%3D%275.0%27%20transform%3D%27rotate%280.0%2028.0%2021.0%29%27%20/%3E%3Cellipse%20cx%3D%2734.7%27%20cy%3D%2725.8%27%20rx%3D%273.0%27%20ry%3D%275.0%27%20transform%3D%27rotate%2872.0%2034.7%2025.8%29%27%20/%3E%3Cellipse%20cx%3D%2732.1%27%20cy%3D%2733.7%27%20rx%3D%273.0%27%20ry%3D%275.0%27%20transform%3D%27rotate%28144.0%2032.1%2033.7%29%27%20/%3E%3Cellipse%20cx%3D%2723.9%27%20cy%3D%2733.7%27%20rx%3D%273.0%27%20ry%3D%275.0%27%20transform%3D%27rotate%28216.0%2023.9%2033.7%29%27%20/%3E%3Cellipse%20cx%3D%2721.3%27%20cy%3D%2725.8%27%20rx%3D%273.0%27%20ry%3D%275.0%27%20transform%3D%27rotate%28288.0%2021.3%2025.8%29%27%20/%3E%3Ccircle%20cx%3D%2728%27%20cy%3D%2728%27%20r%3D%272.8%27%20fill%3D%27%23D9B86A%27%20stroke%3D%27none%27%20/%3E%3C/g%3E%3Cg%20fill%3D%27%23F8F5EA%27%20stroke%3D%27%23B08D57%27%20stroke-width%3D%270.6%27%3E%0A%3Cellipse%20cx%3D%2712.0%27%20cy%3D%2711.0%27%20rx%3D%271.8%27%20ry%3D%273.0%27%20transform%3D%27rotate%280.0%2012.0%2011.0%29%27%20/%3E%3Cellipse%20cx%3D%2715.9%27%20cy%3D%2713.7%27%20rx%3D%271.8%27%20ry%3D%273.0%27%20transform%3D%27rotate%2872.0%2015.9%2013.7%29%27%20/%3E%3Cellipse%20cx%3D%2714.4%27%20cy%3D%2718.3%27%20rx%3D%271.8%27%20ry%3D%273.0%27%20transform%3D%27rotate%28144.0%2014.4%2018.3%29%27%20/%3E%3Cellipse%20cx%3D%279.6%27%20cy%3D%2718.3%27%20rx%3D%271.8%27%20ry%3D%273.0%27%20transform%3D%27rotate%28216.0%209.6%2018.3%29%27%20/%3E%3Cellipse%20cx%3D%278.1%27%20cy%3D%2713.7%27%20rx%3D%271.8%27%20ry%3D%273.0%27%20transform%3D%27rotate%28288.0%208.1%2013.7%29%27%20/%3E%3Ccircle%20cx%3D%2712%27%20cy%3D%2715%27%20r%3D%271.7%27%20fill%3D%27%23D9B86A%27%20stroke%3D%27none%27%20/%3E%3C/g%3E%3Cg%20fill%3D%27%23F8F5EA%27%20stroke%3D%27%23B08D57%27%20stroke-width%3D%270.6%27%3E%0A%3Cellipse%20cx%3D%2742.0%27%20cy%3D%2710.0%27%20rx%3D%271.5%27%20ry%3D%272.5%27%20transform%3D%27rotate%280.0%2042.0%2010.0%29%27%20/%3E%3Cellipse%20cx%3D%2745.2%27%20cy%3D%2712.4%27%20rx%3D%271.5%27%20ry%3D%272.5%27%20transform%3D%27rotate%2872.0%2045.2%2012.4%29%27%20/%3E%3Cellipse%20cx%3D%2743.9%27%20cy%3D%2716.3%27%20rx%3D%271.5%27%20ry%3D%272.5%27%20transform%3D%27rotate%28144.0%2043.9%2016.3%29%27%20/%3E%3Cellipse%20cx%3D%2740.1%27%20cy%3D%2716.3%27%20rx%3D%271.5%27%20ry%3D%272.5%27%20transform%3D%27rotate%28216.0%2040.1%2016.3%29%27%20/%3E%3Cellipse%20cx%3D%2738.8%27%20cy%3D%2712.4%27%20rx%3D%271.5%27%20ry%3D%272.5%27%20transform%3D%27rotate%28288.0%2038.8%2012.4%29%27%20/%3E%3Ccircle%20cx%3D%2742%27%20cy%3D%2714%27%20r%3D%271.4%27%20fill%3D%27%23D9B86A%27%20stroke%3D%27none%27%20/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-  opacity: 0.1;
+  background-size: contain;
+  opacity: 0.9;
   pointer-events: none;
+}
+.event-card::before {
+  bottom: -6px;
+  left: -6px;
+}
+.event-card::after {
+  top: -6px;
+  right: -6px;
+  transform: rotate(180deg);
 }
 .event-card__ornament {
   width: 46px;
@@ -636,8 +643,10 @@ input:focus, textarea:focus { border-color: var(--gold); }
    ========================================================================== */
 .closing { text-align: center; }
 .closing__names {
-  font-style: italic;
-  margin-bottom: 20px;
+  font-family: var(--font-script);
+  font-style: normal;
+  font-size: clamp(48px, 12vw, 64px);
+  margin-bottom: 12px;
 }
 .closing__note {
   color: var(--text-light-soft);
