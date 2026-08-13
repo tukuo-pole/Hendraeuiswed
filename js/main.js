@@ -86,7 +86,7 @@ const CONFIG = {
 
   // Paste the Web App URL you get after deploying apps-script/Code.gs
   // (see SETUP-GUIDE.md). Leave empty to keep RSVP/Wishes disabled.
-  appsScriptUrl: "https://script.google.com/macros/s/AKfycbyM8cZfgnwtGhkdTgx6RGLgdNvddQWA2ERpEKOMSau0WF0c_mJx3qRM5TL11hi1A6gj-A/exec",
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbyUo8b13OvoW8QC1cbyCED6tFQPvZm_pZLwNySd8X7X_j_WbCrS8Ua504zL-D2RDRpotQ/exec",
 
   // How often to refresh the wishes list, in milliseconds.
   wishesPollMs: 15000
@@ -367,6 +367,19 @@ function initMusicToggle() {
       music.pause();
       setMusicState(false);
     }
+  });
+
+  // Browsers allow audio to keep playing in the background by default
+  // (switching apps, locking the screen, minimizing). Stop it explicitly
+  // whenever the page is hidden or closed, rather than letting it run on.
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && !music.paused) {
+      music.pause();
+      setMusicState(false);
+    }
+  });
+  window.addEventListener("pagehide", () => {
+    music.pause();
   });
 }
 
