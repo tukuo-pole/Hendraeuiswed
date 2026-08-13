@@ -33,11 +33,11 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background-color: var(--bg);
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22260%22%20height%3D%22260%22%3E%3Cfilter%20id%3D%22p%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.9%22%20numOctaves%3D%222%22%20seed%3D%224%22%20stitchTiles%3D%22stitch%22%20result%3D%22fine%22/%3E%3CfeComponentTransfer%20in%3D%22fine%22%20result%3D%22specksRaw%22%3E%3CfeFuncR%20type%3D%22gamma%22%20amplitude%3D%221%22%20exponent%3D%227%22%20offset%3D%220%22/%3E%3CfeFuncG%20type%3D%22gamma%22%20amplitude%3D%221%22%20exponent%3D%227%22%20offset%3D%220%22/%3E%3CfeFuncB%20type%3D%22gamma%22%20amplitude%3D%221%22%20exponent%3D%227%22%20offset%3D%220%22/%3E%3C/feComponentTransfer%3E%3CfeColorMatrix%20in%3D%22specksRaw%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.5%200.5%200.5%200%200%22%20result%3D%22speckAlpha%22/%3E%3CfeFlood%20flood-color%3D%22%233A2F1F%22%20result%3D%22speckColor%22/%3E%3CfeComposite%20in%3D%22speckColor%22%20in2%3D%22speckAlpha%22%20operator%3D%22in%22%20result%3D%22specks%22/%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.025%22%20numOctaves%3D%222%22%20seed%3D%229%22%20stitchTiles%3D%22stitch%22%20result%3D%22soft%22/%3E%3CfeColorMatrix%20in%3D%22soft%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.05%200.05%200.05%200%200%22%20result%3D%22softAlpha%22/%3E%3CfeFlood%20flood-color%3D%22%233A2F1F%22%20result%3D%22softColor%22/%3E%3CfeComposite%20in%3D%22softColor%22%20in2%3D%22softAlpha%22%20operator%3D%22in%22%20result%3D%22soft2%22/%3E%3CfeMerge%3E%3CfeMergeNode%20in%3D%22soft2%22/%3E%3CfeMergeNode%20in%3D%22specks%22/%3E%3C/feMerge%3E%3C/filter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23p%29%22/%3E%3C/svg%3E");
+  background-image: url("../assets/paper-light.png");
   background-repeat: repeat;
   color: var(--text);
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -69,7 +69,7 @@ a { color: inherit; }
   font-family: var(--font-body);
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 15px;
   color: var(--sage);
   margin: 0 0 10px;
 }
@@ -79,7 +79,7 @@ a { color: inherit; }
 .section__title {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(28px, 5vw, 38px);
+  font-size: clamp(30px, 5.5vw, 42px);
   line-height: 1.25;
   text-align: center;
   margin: 0 0 16px;
@@ -92,7 +92,7 @@ a { color: inherit; }
   max-width: 46ch;
   margin: 0 auto 32px;
   color: var(--text-soft);
-  font-size: 15px;
+  font-size: 17px;
 }
 
 /* ==========================================================================
@@ -105,7 +105,7 @@ a { color: inherit; }
 }
 .section--alt {
   background-color: var(--bg-alt);
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22260%22%20height%3D%22260%22%3E%3Cfilter%20id%3D%22p%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.9%22%20numOctaves%3D%222%22%20seed%3D%224%22%20stitchTiles%3D%22stitch%22%20result%3D%22fine%22/%3E%3CfeComponentTransfer%20in%3D%22fine%22%20result%3D%22specksRaw%22%3E%3CfeFuncR%20type%3D%22gamma%22%20amplitude%3D%221%22%20exponent%3D%227%22%20offset%3D%220%22/%3E%3CfeFuncG%20type%3D%22gamma%22%20amplitude%3D%221%22%20exponent%3D%227%22%20offset%3D%220%22/%3E%3CfeFuncB%20type%3D%22gamma%22%20amplitude%3D%221%22%20exponent%3D%227%22%20offset%3D%220%22/%3E%3C/feComponentTransfer%3E%3CfeColorMatrix%20in%3D%22specksRaw%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.5%200.5%200.5%200%200%22%20result%3D%22speckAlpha%22/%3E%3CfeFlood%20flood-color%3D%22%233A2F1F%22%20result%3D%22speckColor%22/%3E%3CfeComposite%20in%3D%22speckColor%22%20in2%3D%22speckAlpha%22%20operator%3D%22in%22%20result%3D%22specks%22/%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.025%22%20numOctaves%3D%222%22%20seed%3D%229%22%20stitchTiles%3D%22stitch%22%20result%3D%22soft%22/%3E%3CfeColorMatrix%20in%3D%22soft%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.05%200.05%200.05%200%200%22%20result%3D%22softAlpha%22/%3E%3CfeFlood%20flood-color%3D%22%233A2F1F%22%20result%3D%22softColor%22/%3E%3CfeComposite%20in%3D%22softColor%22%20in2%3D%22softAlpha%22%20operator%3D%22in%22%20result%3D%22soft2%22/%3E%3CfeMerge%3E%3CfeMergeNode%20in%3D%22soft2%22/%3E%3CfeMergeNode%20in%3D%22specks%22/%3E%3C/feMerge%3E%3C/filter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23p%29%22/%3E%3C/svg%3E");
+  background-image: url("../assets/paper-light.png");
   background-repeat: repeat;
   max-width: 100%;
 }
@@ -114,7 +114,7 @@ a { color: inherit; }
 .section--dark {
   background-color: var(--dark);
   background-image:
-    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22260%22%20height%3D%22260%22%3E%3Cfilter%20id%3D%22p%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.9%22%20numOctaves%3D%222%22%20seed%3D%224%22%20stitchTiles%3D%22stitch%22%20result%3D%22fine%22/%3E%3CfeComponentTransfer%20in%3D%22fine%22%20result%3D%22specksRaw%22%3E%3CfeFuncR%20type%3D%22gamma%22%20amplitude%3D%221%22%20exponent%3D%227%22%20offset%3D%220%22/%3E%3CfeFuncG%20type%3D%22gamma%22%20amplitude%3D%221%22%20exponent%3D%227%22%20offset%3D%220%22/%3E%3CfeFuncB%20type%3D%22gamma%22%20amplitude%3D%221%22%20exponent%3D%227%22%20offset%3D%220%22/%3E%3C/feComponentTransfer%3E%3CfeColorMatrix%20in%3D%22specksRaw%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.22%200.22%200.22%200%200%22%20result%3D%22speckAlpha%22/%3E%3CfeFlood%20flood-color%3D%22%23FFFFFF%22%20result%3D%22speckColor%22/%3E%3CfeComposite%20in%3D%22speckColor%22%20in2%3D%22speckAlpha%22%20operator%3D%22in%22%20result%3D%22specks%22/%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.025%22%20numOctaves%3D%222%22%20seed%3D%229%22%20stitchTiles%3D%22stitch%22%20result%3D%22soft%22/%3E%3CfeColorMatrix%20in%3D%22soft%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.035%200.035%200.035%200%200%22%20result%3D%22softAlpha%22/%3E%3CfeFlood%20flood-color%3D%22%23FFFFFF%22%20result%3D%22softColor%22/%3E%3CfeComposite%20in%3D%22softColor%22%20in2%3D%22softAlpha%22%20operator%3D%22in%22%20result%3D%22soft2%22/%3E%3CfeMerge%3E%3CfeMergeNode%20in%3D%22soft2%22/%3E%3CfeMergeNode%20in%3D%22specks%22/%3E%3C/feMerge%3E%3C/filter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23p%29%22/%3E%3C/svg%3E"),
+    url("../assets/paper-dark.png"),
     linear-gradient(160deg, var(--dark) 0%, var(--dark-2) 100%);
   background-repeat: repeat, no-repeat;
   max-width: 100%;
@@ -201,13 +201,13 @@ a { color: inherit; }
 
 .cover__guestLabel {
   margin: 18px 0 4px;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-light-soft);
 }
 .cover__guestName {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 20px;
+  font-size: 22px;
   margin: 0 0 28px;
   color: var(--gold-light);
 }
@@ -218,7 +218,7 @@ a { color: inherit; }
   font-weight: 400;
   font-size: clamp(56px, 17vw, 92px);
   margin: 0;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
   line-height: 1.1;
 }
 .cover__name .amp {
@@ -229,7 +229,7 @@ a { color: inherit; }
 }
 
 .cover__date {
-  font-size: 14px;
+  font-size: 17px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-light-soft);
@@ -256,7 +256,7 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
   padding: 14px 30px;
   border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
@@ -312,13 +312,13 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
 .couple__photo--bride { background-image: var(--photo-bride, none); }
 .couple__name {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   margin: 0 0 8px;
   color: var(--dark);
 }
 .couple__parents {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-soft);
   margin: 0;
 }
@@ -355,7 +355,7 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
   display: flex;
   justify-content: center;
   gap: clamp(10px, 4vw, 24px);
-  margin: 36px 0 32px;
+  margin: 36px auto 32px;
   flex-wrap: wrap;
 }
 .countdown__item {
@@ -373,7 +373,7 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
 }
 .countdown__label {
   margin-top: 6px;
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-light-soft);
@@ -429,7 +429,7 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
 .event-card__ornament svg { width: 100%; height: auto; display: block; }
 .event-card__title {
   font-family: var(--font-display);
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 600;
   color: var(--gold);
   margin: 0 0 -2px;
@@ -444,13 +444,13 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
 .event-card__main {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--dark);
 }
 .event-card__sub {
   margin: 2px 0 0;
-  font-size: 13.5px;
+  font-size: 16px;
   color: var(--text-soft);
 }
 .event-card__calendarBtn {
@@ -458,7 +458,7 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
   border-color: var(--gold);
   color: var(--gold);
   padding: 10px 22px;
-  font-size: 11.5px;
+  font-size: 14px;
 }
 .event-card__calendarBtn:hover { background: var(--gold); color: #fff; }
 
@@ -473,7 +473,7 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
 .map-embed {
   border-radius: 18px;
   overflow: hidden;
-  margin: 32px 0 24px;
+  margin: 32px auto 24px;
   box-shadow: 0 10px 30px rgba(30, 47, 34, 0.12);
 }
 .map-embed iframe {
@@ -493,7 +493,7 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
 }
 .field { display: flex; flex-direction: column; gap: 8px; }
 .field__label {
-  font-size: 12.5px;
+  font-size: 15px;
   letter-spacing: 0.06em;
   color: var(--text-soft);
 }
@@ -501,7 +501,7 @@ input[type="text"],
 input[type="number"],
 textarea {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 17px;
   padding: 13px 16px;
   border-radius: 12px;
   border: 1px solid rgba(30, 47, 34, 0.2);
@@ -520,7 +520,7 @@ input:focus, textarea:focus { border-color: var(--gold); }
   padding: 12px 10px;
   border-radius: 999px;
   border: 1px solid rgba(30, 47, 34, 0.25);
-  font-size: 13.5px;
+  font-size: 16px;
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
@@ -544,7 +544,7 @@ input:focus, textarea:focus { border-color: var(--gold); }
 
 .rsvp-form__status {
   text-align: center;
-  font-size: 13.5px;
+  font-size: 15px;
   min-height: 18px;
   margin: 4px 0 0;
 }
@@ -570,12 +570,12 @@ input:focus, textarea:focus { border-color: var(--gold); }
 .wish-card__name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 17px;
   margin: 0 0 4px;
   color: var(--dark);
 }
 .wish-card__attendance {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--sage);
@@ -585,14 +585,14 @@ input:focus, textarea:focus { border-color: var(--gold); }
 }
 .wish-card__message {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-soft);
   font-style: italic;
 }
 .wishes-empty {
   text-align: center;
   color: var(--text-soft);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* ==========================================================================
@@ -610,7 +610,7 @@ input:focus, textarea:focus { border-color: var(--gold); }
   text-align: center;
 }
 .gift-card__label {
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--sage);
@@ -618,12 +618,12 @@ input:focus, textarea:focus { border-color: var(--gold); }
 }
 .gift-card__main {
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 600;
   margin: 0 0 10px;
   color: var(--dark);
 }
-.gift-card__main--address { font-weight: 500; font-size: 16px; }
+.gift-card__main--address { font-weight: 500; font-size: 17px; }
 .gift-card__copyRow {
   display: flex;
   align-items: center;
@@ -633,7 +633,7 @@ input:focus, textarea:focus { border-color: var(--gold); }
 }
 .gift-card__number {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 0.06em;
   font-weight: 500;
 }
@@ -642,13 +642,13 @@ input:focus, textarea:focus { border-color: var(--gold); }
   color: var(--gold);
   background: transparent;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 6px 14px;
 }
 .copy-btn:hover { background: var(--gold); color: #fff; }
-.gift-card__sub { margin: 0; font-size: 13px; color: var(--text-soft); }
+.gift-card__sub { margin: 0; font-size: 15px; color: var(--text-soft); }
 
 /* ==========================================================================
    CLOSING
@@ -659,16 +659,17 @@ input:focus, textarea:focus { border-color: var(--gold); }
   font-style: normal;
   font-size: clamp(48px, 12vw, 64px);
   margin-bottom: 12px;
+  word-spacing: 0.2em;
 }
 .closing__note {
   color: var(--text-light-soft);
-  font-size: 14.5px;
+  font-size: 16.5px;
   max-width: 42ch;
   margin: 0 auto 24px;
 }
 .closing__signature {
   color: var(--gold-light);
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -697,7 +698,7 @@ input:focus, textarea:focus { border-color: var(--gold); }
 .site-nav__inner::-webkit-scrollbar { display: none; }
 .site-nav__link {
   flex: none;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
@@ -726,14 +727,14 @@ input:focus, textarea:focus { border-color: var(--gold); }
 .quote-section__text {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: clamp(17px, 3.6vw, 21px);
+  font-size: clamp(18px, 3.8vw, 22px);
   line-height: 1.6;
   color: var(--dark);
   max-width: 44ch;
   margin: 0 auto 14px;
 }
 .quote-section__source {
-  font-size: 12.5px;
+  font-size: 14px;
   letter-spacing: 0.08em;
   color: var(--sage);
   margin: 0 0 22px;
@@ -792,7 +793,7 @@ input:focus, textarea:focus { border-color: var(--gold); }
   border: 1px solid rgba(30, 47, 34, 0.2);
   background: #fff;
   color: var(--dark);
-  font-size: 13px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -821,7 +822,7 @@ input:focus, textarea:focus { border-color: var(--gold); }
 .moments-empty {
   text-align: center;
   color: var(--text-soft);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media (min-width: 640px) {
