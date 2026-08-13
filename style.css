@@ -223,14 +223,14 @@ a { color: inherit; }
   margin: 0 0 36px;
 }
 
-.cover__openBtn {
+button.cover__openBtn {
   color: #fff;
   border-color: var(--gold);
   border-width: 1.5px;
   background: var(--gold);
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
 }
-.cover__openBtn:hover { background: var(--gold-light); border-color: var(--gold-light); }
+button.cover__openBtn:hover { background: var(--gold-light); border-color: var(--gold-light); }
 
 /* ==========================================================================
    BUTTONS
