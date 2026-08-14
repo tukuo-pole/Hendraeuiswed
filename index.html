@@ -139,6 +139,11 @@
         </g>
       </svg>
     </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span class="scroll-hint__text">Gulir ke bawah</span>
+      <span class="scroll-hint__arrow">&#8595;</span>
+    </div>
   </section>
 
   <!-- ============ BRIDE & GROOM ============ -->
@@ -262,33 +267,36 @@
     <p class="eyebrow eyebrow--center">Lokasi</p>
     <h2 class="section__title">Menuju Tempat Acara</h2>
 
-    <div class="map-embed">
-      <iframe id="mapEmbed" title="Lokasi acara" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=Arunika+Eatery+Cigugur+Palutungan+Kuningan&output=embed">
-      </iframe>
-    </div>
+    <div class="location-card">
+      <div class="map-embed">
+        <iframe id="mapEmbed" title="Lokasi acara" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Arunika+Eatery+Cigugur+Palutungan+Kuningan&output=embed">
+        </iframe>
+      </div>
 
-    <div id="travelNote" class="travel-note">
-      <span class="travel-note__icon" aria-hidden="true">&#128663;</span>
-      <span id="travelNoteText" class="travel-note__text">&plusmn; 4 jam perjalanan dari Jakarta</span>
-    </div>
+      <div id="travelNote" class="travel-note">
+        <span class="travel-note__icon" aria-hidden="true">&#128663;</span>
+        <span id="travelNoteText" class="travel-note__text">&plusmn; 4 jam perjalanan dari Jakarta</span>
+      </div>
 
-    <div class="travel-route" aria-hidden="true">
-      <svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="#A8813C" stroke-width="1.4">
-          <path d="M40 45 C 110 15, 210 75, 280 45" stroke-dasharray="5 6" stroke-linecap="round"/>
-        </g>
-        <g>
-          <circle cx="40" cy="45" r="5" fill="#1E2F22"/>
-          <circle cx="40" cy="45" r="9" fill="none" stroke="#A8813C" stroke-width="1"/>
-          <text x="40" y="70" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" fill="#55584A">Jakarta</text>
-        </g>
-        <g>
-          <circle cx="280" cy="45" r="5" fill="#A8813C"/>
-          <circle cx="280" cy="45" r="9" fill="none" stroke="#A8813C" stroke-width="1"/>
-          <text x="280" y="70" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" fill="#55584A">Arunika Eatery</text>
-        </g>
-      </svg>
+      <div class="travel-route" aria-hidden="true">
+        <svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#A8813C" stroke-width="1.4">
+            <path class="travel-route__path" d="M40 45 C 110 15, 210 75, 280 45" stroke-dasharray="5 6" stroke-linecap="round"/>
+          </g>
+          <g>
+            <circle cx="40" cy="45" r="5" fill="#1E2F22"/>
+            <circle cx="40" cy="45" r="9" fill="none" stroke="#A8813C" stroke-width="1"/>
+            <text x="40" y="70" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" fill="#55584A">Jakarta</text>
+          </g>
+          <g>
+            <circle class="travel-route__pulse" cx="280" cy="45" r="9" fill="none" stroke="#A8813C" stroke-width="1.5"/>
+            <circle cx="280" cy="45" r="5" fill="#A8813C"/>
+            <circle cx="280" cy="45" r="9" fill="none" stroke="#A8813C" stroke-width="1"/>
+            <text x="280" y="70" text-anchor="middle" font-family="Jost, sans-serif" font-size="11" fill="#55584A">Arunika Eatery</text>
+          </g>
+        </svg>
+      </div>
     </div>
 
     <a id="mapDirectionsBtn" href="#" target="_blank" rel="noopener" class="btn btn--gold">
