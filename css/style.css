@@ -325,7 +325,6 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
 
 @media (max-width: 480px) {
   .couple__grid { grid-template-columns: 1fr; gap: 28px; }
-  .couple__divider { order: 2; }
 }
 
 /* ==========================================================================
@@ -744,7 +743,44 @@ input:focus, textarea:focus { border-color: var(--gold); }
 /* ==========================================================================
    QUOTE SECTION
    ========================================================================== */
-.quote-section { text-align: center; padding-top: clamp(32px, 6vh, 52px); padding-bottom: clamp(28px, 5vh, 44px); }
+.quote-section {
+  text-align: center;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 24px;
+}
+
+.quote-section .quote-ornament,
+.quote-section .quote-section__text,
+.quote-section .quote-section__source,
+.quote-section .quote-flourish,
+.quote-section .quote-treeline {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.quote-section.is-visible .quote-ornament { transition-delay: 0.1s; }
+.quote-section.is-visible .quote-section__text { transition-delay: 0.35s; }
+.quote-section.is-visible .quote-section__source { transition-delay: 0.6s; }
+.quote-section.is-visible .quote-flourish { transition-delay: 0.8s; }
+.quote-section.is-visible .quote-treeline { transition-delay: 0.95s; }
+.quote-section.is-visible .quote-ornament,
+.quote-section.is-visible .quote-section__text,
+.quote-section.is-visible .quote-section__source,
+.quote-section.is-visible .quote-flourish,
+.quote-section.is-visible .quote-treeline {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.quote-ornament svg { animation: gentle-float 4s ease-in-out infinite; }
 .quote-ornament {
   width: 130px;
   margin: 0 auto 18px;
