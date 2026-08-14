@@ -297,6 +297,7 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
   font-family: var(--font-script);
   font-size: 40px;
   color: var(--gold);
+  text-align: center;
 }
 .couple__card { text-align: center; }
 .couple__photo {
@@ -507,6 +508,32 @@ button.cover__openBtn:hover { background: var(--gold-light); border-color: var(-
   margin: 0 auto 24px;
 }
 .travel-route svg { width: 100%; height: auto; display: block; }
+.travel-route__path {
+  animation: dash-flow 1.4s linear infinite;
+}
+@keyframes dash-flow {
+  to { stroke-dashoffset: -22; }
+}
+.travel-route__pulse {
+  transform-origin: 280px 45px;
+  animation: pulse-ring 2s ease-out infinite;
+}
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.location-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 16px 16px 24px;
+  margin-top: 32px;
+  box-shadow: 0 14px 36px rgba(30, 47, 34, 0.14);
+  border: 1px solid rgba(168, 129, 60, 0.15);
+}
+.location-card .map-embed { margin: 0 0 20px; }
+.location-card .travel-note { margin-bottom: 18px; }
+.location-card .travel-route { margin-bottom: 4px; }
 
 /* ==========================================================================
    RSVP FORM
@@ -744,6 +771,7 @@ input:focus, textarea:focus { border-color: var(--gold); }
    QUOTE SECTION
    ========================================================================== */
 .quote-section {
+  position: relative;
   text-align: center;
   min-height: 100dvh;
   display: flex;
@@ -812,6 +840,34 @@ input:focus, textarea:focus { border-color: var(--gold); }
   margin: 28px auto 0;
 }
 .quote-treeline svg { width: 100%; height: auto; display: block; }
+
+.scroll-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.65;
+  pointer-events: none;
+}
+.scroll-hint__text {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+.scroll-hint__arrow {
+  font-size: 18px;
+  color: var(--gold);
+  animation: bounce-down 1.8s ease-in-out infinite;
+}
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(7px); }
+}
 
 /* ==========================================================================
    MOMENTS CAROUSEL
